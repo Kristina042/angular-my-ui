@@ -1,22 +1,74 @@
-<div class="components">
-  <lib-button
+<div class="buttons">
+  <lib-basic-button
     label="TEST BUTTON"
-    [disabled]="false"
-    variant="primary"
-  />
-
-  <lib-button
-    label="TEST BUTTON"
-    [disabled]="false"
-    variant="secondary"
-  />
-
-  <lib-button
-    label="TEST BUTTON"
-    [disabled]="false"
     variant="danger"
+    [animated]="true"
+    color="red"
   />
-  <!-- <app-test-button label="test button" [disabled]="false" type="submit"></app-test-button> -->
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="primary"
+    [animated]="true"
+    size="small"
+  />
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="secondary"
+    [animated]="true"
+    size="medium"
+  />
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="primary"
+    [animated]="false"
+    color="green"
+     size="large"
+  />
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="secondary"
+    [animated]="false"
+    color="green"
+  />
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="primary"
+    [animated]="false"
+    color="purple"
+  />
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="secondary"
+    [animated]="false"
+    color="purple"
+  />
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="primary"
+    [animated]="false"
+    color="pink"
+    [disabled]="true"
+  />
+
+  <lib-basic-button
+    label="TEST BUTTON"
+    variant="secondary"
+    [animated]="false"
+    color="pink"
+    [disabled]="true"
+  />
+
+
 </div>
 
+<div class="switches">
+
+</div>
 <router-outlet />

@@ -1,0 +1,9 @@
+<button
+  class="ui-button"
+  [ngClass]="[variant, animated ? 'animated' : '']"
+  [disabled]="disabled"
+  [type]="type"
+  [style]="getStyle()"
+>
+  {{ label }}
+</button>
