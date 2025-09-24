@@ -1,11 +1,34 @@
-.buttons {
+.components {
+  height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 20px;
   padding: 50px;
-
 }
 
+.switch {
+  width: 30px;
+}
+
+
+.switches {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputs {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

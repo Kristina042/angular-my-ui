@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { colorsHex } from '../../utils/colors';
+import { UIcolors } from '../../utils/colors';
 
 @Component({
   selector: 'lib-basic-button',
@@ -13,31 +15,19 @@ export class BasicButton {
   @Input() disabled?: boolean = false;
   @Input() type?: 'button' | 'submit' = 'button'
   @Input() variant?: 'primary' | 'secondary' | 'danger' = 'primary';
-  @Input() color?: 'pink' | 'blue' | 'green' | 'purple' | 'red' = 'blue'
+  @Input() color?: UIcolors = 'blue'
   @Input() size?: 'small' | 'medium' | 'large' = 'medium';
   @Input() animated?: boolean = false
 
-  getVariantClass() {
-    return this.variant
-  }
-
   getStyle() {
-    const colorsHex: Record<string, string> = {
-      blue: '#007BFF',
-      pink: '#da3bbf',
-      green: '#36d43c',
-      purple: '#5e1ff0',
-      red: '#ff3f3f'
-    };
-
     const color = colorsHex[this.color || 'blue']
     const fontSize = this.mapFontSize(this.size)
 
     switch (this.variant) {
       case 'primary':
         return {
-          '--bg-color': `${color}80`,
-          '--hover-bg-color': `${color}CC`,
+          '--bg-color': `${color}B2`,
+          '--hover-bg-color': `${color}`,
           '--text-color': 'white',
           '--font-size': fontSize
         };
@@ -53,8 +43,8 @@ export class BasicButton {
         };
       case 'danger':
         return {
-          '--bg-color': `${color}80`,
-          '--hover-bg-color': `${color}CC`,
+          '--bg-color': `${color}B2`,
+          '--hover-bg-color': `${color}`,
           '--text-color': 'white',
           '--font-size': fontSize
         };
