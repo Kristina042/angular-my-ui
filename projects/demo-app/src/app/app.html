@@ -1,5 +1,5 @@
 <div class="components">
-  <div class="buttons">
+  <!-- <div class="buttons">
     <lib-basic-button
       label="TEST BUTTON"
       variant="danger"
@@ -93,10 +93,10 @@
     />
 
 
-  </div>
+  </div> -->
 
   <div class="switches">
-    <lib-basic-switch class="switch" color="blue"/>
+    <lib-basic-switch class="switch" color="blue" (isChecked)="log($event)"/>
     <lib-basic-switch class="switch" color="red"/>
     <lib-basic-switch class="switch" color="pink"/>
     <lib-basic-switch class="switch" color="purple"/>
@@ -108,34 +108,34 @@
   <div class="inputs">
     <lib-basic-input
       size="large"
-      placeholder="your name"
+      placeholder="password"
       type="password"
       color="pink"
     />
 
     <lib-basic-input
-      size="large"
-      placeholder="your name"
+      size="medium"
+      placeholder="name"
       type="email"
       color="green"
     />
 
     <lib-basic-input
-      size="large"
-      placeholder="your name"
+      size="small"
+      placeholder="email"
       type="text"
       color="purple"
     />
     <lib-basic-input
       size="large"
-      placeholder="your name"
+      placeholder="adress"
       type="text"
       color="blue"
     />
 
     <lib-basic-input
       size="large"
-      placeholder="your name"
+      placeholder="phone number"
       type="text"
       color="orange"
     />

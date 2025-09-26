@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { colorsHex, UIcolors } from '../../utils/colors';
 
 @Component({
@@ -9,6 +9,13 @@ import { colorsHex, UIcolors } from '../../utils/colors';
 })
 export class BasicSwitch {
   @Input() color?: UIcolors = 'blue'
+  @Output() isChecked = new EventEmitter<boolean>(false)
+  checked = false
+
+  onClick() {
+    this.checked = !this.checked
+    this.checked === true ? this.isChecked.emit(true) : this.isChecked.emit(false)
+  }
 
   getStyle() {
     const color = colorsHex[this.color || 'blue']

@@ -12,4 +12,8 @@ import { BasicInput } from 'my-ui';
 })
 export class App {
   protected readonly title = signal('demo-app');
+
+  log(isChecked: boolean) {
+    console.log(isChecked)
+  }
 }
