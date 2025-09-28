@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { BasicButton } from 'my-ui'
 import { BasicSwitch } from 'my-ui';
 import { BasicInput } from 'my-ui';
+import { SignupForm } from 'my-ui';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BasicButton, BasicSwitch, BasicInput],
+  imports: [RouterOutlet, BasicButton, BasicSwitch, BasicInput, SignupForm],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

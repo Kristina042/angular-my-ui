@@ -1,5 +1,5 @@
 <div class="components">
-  <!-- <div class="buttons">
+  <div class="buttons">
     <lib-basic-button
       label="TEST BUTTON"
       variant="danger"
@@ -93,7 +93,7 @@
     />
 
 
-  </div> -->
+  </div>
 
   <div class="switches">
     <lib-basic-switch class="switch" color="blue" (isChecked)="log($event)"/>
@@ -125,12 +125,14 @@
       placeholder="email"
       type="text"
       color="purple"
+      [isValid]="false"
     />
     <lib-basic-input
       size="large"
-      placeholder="adress"
+      placeholder="address"
       type="text"
       color="blue"
+      [isValid]="false"
     />
 
     <lib-basic-input
@@ -138,6 +140,7 @@
       placeholder="phone number"
       type="text"
       color="orange"
+      [isValid]="false"
     />
 
     <lib-basic-input
@@ -155,4 +158,48 @@
     />
   </div>
 </div>
+
+ <div class="forms">
+    <div class="form">
+      <lib-signup-form
+        color="green"
+      />
+    </div>
+
+    <div class="form">
+      <lib-signup-form
+        color="pink"
+      />
+    </div>
+
+    <div class="form">
+      <lib-signup-form
+        color="purple"
+      />
+    </div>
+
+    <div class="form">
+      <lib-signup-form
+        color="blue"
+      />
+    </div>
+
+    <div class="form">
+      <lib-signup-form
+        color="red"
+      />
+    </div>
+
+    <div class="form">
+      <lib-signup-form
+        color="orange"
+      />
+    </div>
+
+    <div class="form">
+      <lib-signup-form
+        color="yellow"
+      />
+    </div>
+  </div>
 <router-outlet />

@@ -1,0 +1,59 @@
+<form
+  class="signup-form"
+  [style]="getStyle()"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <span class="signup-form__title">SIGN UP</span>
+
+  <div class="signup-form__item">
+    <lib-basic-input
+      class="signup-form__input"
+      formControlName="name"
+      placeholder="name"
+      type="text"
+      [color]="color()"
+      [isValid]="!isNameInvalid"
+    />
+
+    @if(isNameInvalid) {
+      <div class="signup-form__error">Name must be at least 6 characters.</div>
+    }
+  </div>
+
+  <div class="signup-form__item">
+    <lib-basic-input
+      class="signup-form__input"
+      formControlName="email"
+      placeholder="email"
+      type="email"
+      [color]="color()"
+      [isValid]="!isEmailInvalid"
+    />
+    @if(isEmailInvalid) {
+      <div class="signup-form__error">invalid email</div>
+    }
+  </div>
+
+  <div class="signup-form__item">
+    <lib-basic-input
+      class="signup-form__input"
+      formControlName="password"
+      placeholder="password"
+      type="password"
+      [color]="color()"
+      [isValid]="!isPasswordInvalid"
+    />
+    @if(isPasswordInvalid) {
+      <div class="signup-form__error">invalid password</div>
+    }
+  </div>
+
+  <lib-basic-button
+    class="signup-form__submit"
+    label="REGISTER"
+    [animated]="true"
+    [color]="color()"
+    [disabled]="this.form.invalid"
+  />
+</form>
