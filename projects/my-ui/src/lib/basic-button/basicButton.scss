@@ -1,0 +1,121 @@
+@use '../styles/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.ui-button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.4rem 1.2rem;
+  border: none;
+  border: 4px solid transparent;
+  border-radius: 22px;
+  font-size: var(--font-size, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-color, white);
+  backdrop-filter: blur(5px);
+  background: var(--bg-color, rgba(255, 255, 255, 0.2));
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  &:disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+
+    // Prevent all animations & transformations
+    animation: none !important;
+    transform: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+
+    // Prevent hover and active effects
+    &:hover,
+    &:active {
+      animation: none !important;
+      transform: none !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+      background: var(--bg-color, rgba(255, 255, 255, 0.2)) !important;
+      color: var(--text-color, white) !important;
+      border-color: var(--border-color, transparent) !important;
+    }
+  }
+
+  &:hover {
+    background: var(--hover-bg-color, var(--bg-color));
+    color: var(--hover-text-color, var(--text-color));
+    border-color: var(--hover-border-color, var(--border-color, transparent));
+  }
+
+  &.danger.animated {
+    &:hover {
+      animation: danger-pulse 0.6s infinite alternate;
+    }
+    &:active {
+      animation: danger-active 0.2s ease-in-out;
+    }
+  }
+
+
+  &.secondary.animated {
+    &:hover {
+      animation: secondary-hover 0.6s ease-in-out;
+    }
+    &:active {
+      animation: secondary-active 0.2s ease-in-out;
+    }
+  }
+
+  &.primary.animated {
+    &:hover {
+      animation: primary-hover 0.6s ease-in-out;
+    }
+    &:active {
+      transform: scale(0.95)
+    }
+  }
+
+}
+
+@keyframes secondary-active {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+
+
+@keyframes danger-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 49, 70, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 49, 70, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 49, 70, 0.4);
+  }
+}
+
+@keyframes danger-active {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 49, 70, 0.4); }
+  50% { transform: scale(0.9); box-shadow: 0 3px 10px rgba(255, 49, 70, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 49, 70, 0.4); }
+}
+
+@keyframes secondary-hover {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes primary-hover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes primary-active {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,16 @@
+.ui-button {
+  all: unset;
+  display: inline-block;
+  box-sizing: border-box;
+
+  background-color: pink;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+
+}

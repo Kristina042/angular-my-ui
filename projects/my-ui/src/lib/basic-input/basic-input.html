@@ -1,0 +1,22 @@
+<div class="input-wrapper" [style]="getStyle()">
+  <input
+    class="input"
+    [type]="type()"
+    [value]="innerValue"
+    [placeholder]="placeholder()"
+    [disabled]="disabled"
+    [readonly]="readonly()"
+    [attr.minlength]="minlength()"
+    [attr.maxlength]="maxlength()"
+    [ngStyle]="getStyle()"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+    [ngClass]="isValid() ? 'input' : 'input-invalid'"
+  />
+  <label
+    class="label"
+    [ngClass]="isValid() ? 'label' : 'label-invalid'"
+  >
+    {{ placeholder() }}
+  </label>
+</div>
