@@ -1,0 +1,10 @@
+.switches-section {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__switch {
+    width: 30px;
+  }
+}

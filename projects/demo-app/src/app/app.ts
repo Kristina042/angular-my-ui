@@ -1,13 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BasicButton } from 'my-ui'
-import { BasicSwitch } from 'my-ui';
-import { BasicInput } from 'my-ui';
-import { SignupForm } from 'my-ui';
+import { HomePage } from "./home-page/home-page";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BasicButton, BasicSwitch, BasicInput, SignupForm],
+  imports: [RouterOutlet, HomePage],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

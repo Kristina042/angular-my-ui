@@ -1,0 +1,19 @@
+.home-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  &__title {
+    font-size: 30px;
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 25px;
+  }
+}
