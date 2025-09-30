@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { BasicInput } from '../basic-input/basic-input';
 import { BasicButton } from '../basic-button/basicButton';
+import { EmailValidator } from '../../utils/validators';
 import { colorsHex, UIcolors } from '../../utils/colors';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -13,14 +14,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class SignupForm {
   color = input<UIcolors>('blue')
+  @Output() formSubmit =  new EventEmitter()
   form: FormGroup
   name:string = ''
   isNameValid: boolean = true
 
+
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(6)]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, EmailValidator]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     })
   }
@@ -46,6 +49,6 @@ export class SignupForm {
   }
 
   onSubmit() {
-    //send data somewhere
+    this.formSubmit.emit(this.form.value)
   }
 }

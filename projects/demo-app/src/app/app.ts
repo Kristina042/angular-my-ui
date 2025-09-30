@@ -17,4 +17,8 @@ export class App {
   log(isChecked: boolean) {
     console.log(isChecked)
   }
+
+  onFormSubmit(form: any) {
+    console.log(form)
+  }
 }

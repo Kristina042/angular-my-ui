@@ -25,9 +25,8 @@ export class BasicInput implements ControlValueAccessor {
   size = input<'small' | 'medium' | 'large'>('medium');
   isValid = input<boolean>(true);
   minlength = input<number>(1);
-  maxlength = input<number>(12);
+  maxlength = input<number>(100);
 
-  // not a signal → let Angular manage disabled state
   disabled = false;
 
   @Output() valueChange = new EventEmitter<string>();
