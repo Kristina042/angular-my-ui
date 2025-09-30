@@ -17,6 +17,8 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
+  text-overflow: none;
+
   &:disabled {
     opacity: 0.9;
     cursor: not-allowed;

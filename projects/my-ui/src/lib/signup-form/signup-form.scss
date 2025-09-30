@@ -14,8 +14,8 @@
 
   font-family: 'Roboto';
 
-  backdrop-filter: blur(4px); /* blur background behind the div */
-  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
   &__item {
     width: 100%;
